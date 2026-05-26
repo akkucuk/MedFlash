@@ -1,17 +1,34 @@
 {
   "accountAssociation": {
-    "header": "[TO_BE_ADDED_LATER]",
-    "payload": "[TO_BE_ADDED_LATER]",
-    "signature": "[TO_BE_ADDED_LATER]"
+    "header": "eyJmaWQiOjUzNTkwNywidHlwZSI6ImF1dGgiLCJrZXkiOiIweDg1MDdDNWFmZmRlMkRkZTQzODUxN0RBY0YzMzBDZDkyQTA2MmVCNkEifQ",
+    "payload": "eyJkb21haW4iOiJtZWQtZmxhc2gtYmV0YS52ZXJjZWwuYXBwIn0",
+    "signature": "gRFoZVB6+yQjxx6bBj/SgcD5+gtOQ8Ry32e16E1JPz984eTfGV6N+dPyNmvwGw+jhcmW3PHFAnXnAxApjPtn9Bs="
   },
   "frame": {
     "version": "1",
     "name": "MedFlash",
-    "iconUrl": "https://example.com/icon.png",
-    "homeUrl": "https://example.com",
-    "imageUrl": "https://example.com/preview.png",
-    "buttonTitle": "Start learning",
-    "splashImageUrl": "https://example.com/icon.png",
-    "splashBackgroundColor": "#07111f"
+    "subtitle": "AI Medical Microlearning",
+    "description": "An AI-powered medical microlearning mini-app for fast, high-yield clinical education with board-style questions, reasoning-based explanations, streaks, and social learning.",
+    "iconUrl": "https://med-flash-beta.vercel.app/icon.png",
+    "homeUrl": "https://med-flash-beta.vercel.app",
+    "imageUrl": "https://med-flash-beta.vercel.app/preview.png",
+    "buttonTitle": "Start Learning",
+    "splashImageUrl": "https://med-flash-beta.vercel.app/icon.png",
+    "splashBackgroundColor": "#07111f",
+    "primaryCategory": "education",
+    "tags": [
+      "medical",
+      "education",
+      "ai",
+      "quiz"
+    ],
+    "tagline": "Daily medical drills",
+    "heroImageUrl": "https://med-flash-beta.vercel.app/preview.png",
+    "screenshotUrls": [
+      "https://med-flash-beta.vercel.app/preview.png"
+    ],
+    "ogTitle": "MedFlash",
+    "ogDescription": "AI-powered medical microlearning for fast clinical reasoning practice.",
+    "ogImageUrl": "https://med-flash-beta.vercel.app/preview.png"
   }
 }
