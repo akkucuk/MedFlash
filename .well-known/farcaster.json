@@ -8,7 +8,7 @@
     "version": "1",
     "name": "MedFlash",
     "subtitle": "AI Medical Microlearning",
-    "description": "An AI-powered medical microlearning mini-app for fast, high-yield clinical education with board-style questions, reasoning-based explanations, streaks, and social learning.",
+    "description": ""description": "AI-powered medical microlearning app with fast clinical quizzes, reasoning-focused explanations, streaks, and social learning.",
     "iconUrl": "https://med-flash-beta.vercel.app/icon.png",
     "homeUrl": "https://med-flash-beta.vercel.app",
     "imageUrl": "https://med-flash-beta.vercel.app/preview.png",
