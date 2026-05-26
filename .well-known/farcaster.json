@@ -1,0 +1,17 @@
+{
+  "accountAssociation": {
+    "header": "[TO_BE_ADDED_LATER]",
+    "payload": "[TO_BE_ADDED_LATER]",
+    "signature": "[TO_BE_ADDED_LATER]"
+  },
+  "frame": {
+    "version": "1",
+    "name": "MedFlash",
+    "iconUrl": "https://example.com/icon.png",
+    "homeUrl": "https://example.com",
+    "imageUrl": "https://example.com/preview.png",
+    "buttonTitle": "Start learning",
+    "splashImageUrl": "https://example.com/icon.png",
+    "splashBackgroundColor": "#07111f"
+  }
+}

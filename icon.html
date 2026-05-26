@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>MedFlash Assets</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      background: #07111f;
+      color: #f8fbff;
+      font-family: Inter, system-ui, sans-serif;
+    }
+
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      display: grid;
+      gap: 18px;
+    }
+
+    section {
+      padding: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    canvas {
+      width: 100%;
+      max-width: 320px;
+      border-radius: 22px;
+      background: #07111f;
+    }
+
+    button {
+      min-height: 46px;
+      margin-top: 12px;
+      padding: 0 16px;
+      border: 0;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #52f2b5, #7aa7ff);
+      color: #06101d;
+      font-weight: 800;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>MedFlash asset generator</h1>
+    <section>
+      <h2>icon.png</h2>
+      <canvas id="iconCanvas" width="200" height="200"></canvas>
+      <br>
+      <button type="button" data-download="iconCanvas" data-name="icon.png">Download icon.png</button>
+    </section>
+    <section>
+      <h2>preview.png</h2>
+      <canvas id="previewCanvas" width="600" height="400"></canvas>
+      <br>
+      <button type="button" data-download="previewCanvas" data-name="preview.png">Download preview.png</button>
+    </section>
+  </main>
+
+  <script>
+    const icon = document.querySelector('#iconCanvas');
+    const preview = document.querySelector('#previewCanvas');
+
+    function drawRoundedRect(ctx, x, y, width, height, radius) {
+      ctx.beginPath();
+      ctx.moveTo(x + radius, y);
+      ctx.lineTo(x + width - radius, y);
+      ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+      ctx.lineTo(x + width, y + height - radius);
+      ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+      ctx.lineTo(x + radius, y + height);
+      ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+      ctx.lineTo(x, y + radius);
+      ctx.quadraticCurveTo(x, y, x + radius, y);
+      ctx.closePath();
+    }
+
+    function drawIcon() {
+      const ctx = icon.getContext('2d');
+      const gradient = ctx.createLinearGradient(0, 0, 200, 200);
+      gradient.addColorStop(0, '#52f2b5');
+      gradient.addColorStop(1, '#7aa7ff');
+      ctx.fillStyle = '#07111f';
+      ctx.fillRect(0, 0, 200, 200);
+      ctx.fillStyle = gradient;
+      drawRoundedRect(ctx, 24, 24, 152, 152, 42);
+      ctx.fill();
+      ctx.fillStyle = '#07111f';
+      ctx.font = '900 54px system-ui';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('MF', 100, 94);
+      ctx.font = '800 20px system-ui';
+      ctx.fillText('+', 100, 137);
+    }
+
+    function drawPreview() {
+      const ctx = preview.getContext('2d');
+      const gradient = ctx.createLinearGradient(0, 0, 600, 400);
+      gradient.addColorStop(0, '#07111f');
+      gradient.addColorStop(0.55, '#10233d');
+      gradient.addColorStop(1, '#52f2b5');
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, 600, 400);
+      ctx.fillStyle = 'rgba(255,255,255,0.12)';
+      drawRoundedRect(ctx, 46, 46, 508, 308, 34);
+      ctx.fill();
+      ctx.fillStyle = '#52f2b5';
+      ctx.font = '900 28px system-ui';
+      ctx.fillText('MEDFLASH', 74, 104);
+      ctx.fillStyle = '#f8fbff';
+      ctx.font = '900 52px system-ui';
+      ctx.fillText('One clinical question.', 74, 178);
+      ctx.fillText('One high-yield win.', 74, 240);
+      ctx.fillStyle = '#a8b4c7';
+      ctx.font = '700 24px system-ui';
+      ctx.fillText('AI-powered board-style microlearning', 74, 300);
+    }
+
+    function downloadCanvas(canvasId, fileName) {
+      const canvas = document.querySelector(`#${canvasId}`);
+      const link = document.createElement('a');
+      link.download = fileName;
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    }
+
+    document.querySelectorAll('button[data-download]').forEach(button => {
+      button.addEventListener('click', () => downloadCanvas(button.dataset.download, button.dataset.name));
+    });
+
+    drawIcon();
+    drawPreview();
+  </script>
+</body>
+</html>

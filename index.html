@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="fc:frame" content="vNext">
+  <meta name="base:app_id" content="[TO_BE_ADDED_LATER]">
+  <title>MedFlash</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero-card">
+      <div class="top-bar">
+        <div>
+          <p class="eyebrow">MedFlash</p>
+          <h1>Daily clinical microlearning</h1>
+        </div>
+        <div class="streak-pill" aria-label="Current streak">
+          <span id="streakCount">0</span> day streak
+        </div>
+      </div>
+
+      <div class="stats-row" aria-label="Learning stats">
+        <div>
+          <strong id="scoreCount">0</strong>
+          <span>Score</span>
+        </div>
+        <div>
+          <strong id="questionCount">1</strong>
+          <span>Question</span>
+        </div>
+        <div>
+          <strong>Top 18%</strong>
+          <span>Leaderboard</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="question-card" aria-live="polite">
+      <div class="card-header">
+        <span class="tag">Board-style</span>
+        <span class="timer" id="timer">00:30</span>
+      </div>
+
+      <h2 id="questionText"></h2>
+      <div class="options" id="options"></div>
+
+      <section class="explanation hidden" id="explanationBox">
+        <p class="result-label" id="resultLabel"></p>
+        <h3>AI tutor explanation</h3>
+        <p id="explanationText"></p>
+        <div class="why-wrong" id="whyWrong"></div>
+      </section>
+
+      <div class="actions">
+        <button class="primary-btn" id="nextBtn" type="button">Next question</button>
+        <button class="secondary-btn" id="shareBtn" type="button">Share result</button>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="game.js"></script>
+</body>
+</html>
